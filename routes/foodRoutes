@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const foodController = require("../controller");
+
+router.get("/health/food", foodController.getFoods);
+router.get("/nutrition/:foodId", foodController.getFoodById);
+router.post("/health/food", foodController.addFood);
+router.put("/nutrition/:foodId", foodController.updateFood);
+router.delete("/nutrition/:foodId", foodController.deleteFood);
+
+module.exports = router;
